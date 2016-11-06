@@ -1,0 +1,83 @@
+<div class="container">
+  <h2 id="menu-categories-title" class="text-center">Sing Up</h2>
+  <fieldset id="sign-up">
+    <form name='regForm' novalidate>
+
+      <input type="text" name="firstname" placeholder="First Name"
+        ng-model="reg.user.firstname"
+        required
+        minlength="4"
+        ng-maxlength="10">
+      <span ng-if="(regForm.firstname.$error.minlength || regForm.firstname.$error.required) && regForm.	firstname.$touched">
+        First Name must be at least 4 characters long
+      </span>
+      <span ng-if="regForm.firstname.$error.maxlength && regForm.firstname.$touched">
+        First Name must not be longer than 10 characters
+      </span>
+
+      <input type="text" name="lastname" placeholder="Last Name"
+        ng-model="reg.user.lastname"
+        required
+        minlength="4"
+        ng-maxlength="10">
+      <span ng-if="(regForm.lastname.$error.minlength || regForm.lastname.$error.required) && regForm.	lastname.$touched">
+        Last Name must be at least 4 characters long
+      </span>
+      <span ng-if="regForm.lastname.$error.maxlength && regForm.lastname.$touched">
+        Last Name must not be longer than 10 characters
+      </span>
+
+      <input type="email" name="email" placeholder="Email"
+        ng-model="reg.user.email"
+        required>
+      <span ng-if="regForm.email.$invalid && regForm.email.$touched">
+        Must be a valid email address: handle@domain format
+      </span>
+
+
+      <input type="text" name="phone" placeholder="Phone ###-###-####"
+        ng-model="reg.user.phone"
+        pattern="(\d{3})-(\d{3})-(\d{4})">
+      <span ng-if="regForm.phone.$invalid && regForm.phone.$touched">
+        Phone must be in the format ###-###-####.
+      </span>
+
+      <input type="text" name="favorite" placeholder="Favorite Dishes (for example: A1, A2 etc.)"
+        ng-model="reg.user.favorite" ng-change="reg.checkFav()">	
+      <span ng-if="reg.favInvalid && regForm.favorite.$touched">
+        No such menu number exists
+      </span>
+
+
+      <button class="btn btn-danger" 
+        ng-disabled="regForm.$invalid" 
+        ng-click="reg.submit()">Sing Up</button> <!--  || reg.favInvalid -->
+      <p ng-if="reg.completed">Your information has been saved.</p>
+
+      <!-- display the favorite items on fly
+      <div id="fav-list" ng-if="reg.user.favItems.length">
+      <p><b>Your Favorite List</b></p>
+      <p ng-repeat="fav in reg.user.favItems" ng-class=" fav.valid ? 'valid' : 'invalid' ">{{fav.short_name}} - {{fav.valid ? fav.name : 'No such menu number exists.'}}</p>	
+      </div>
+      -->
+
+      <!-- check the form valid or not
+      <div style="margin-top: 10px;">
+      Form valid? {{ regForm.$valid }}
+      </div>      
+      -->      
+
+    </form>
+  </fieldset>
+
+  <!-- display registration data
+  <div id="info" ng-if="reg.completed">
+  First Name: {{ reg.user.firstname}} <br>
+  Last Name: {{ reg.user.lastname}} <br>
+  Email: {{ reg.user.email}} <br>
+  Phone: {{ reg.user.phone }}<br>
+  Favorite Dishes: {{ reg.user.favorite }}
+  </div>  
+  -->
+
+</div>

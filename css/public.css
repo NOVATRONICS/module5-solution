@@ -1,4 +1,80 @@
 /* HOME PAGE */
+
+.ng-touched.ng-valid {
+  border: 2px green solid;
+}
+
+.ng-touched.ng-invalid {
+  border: 2px red solid;
+}
+
+#info {
+  margin-top: 20px;
+}
+
+#my-info div > p {
+  text-align: center;
+}
+#my-info div > a {
+  text-align: center;
+  text-decoration: none;
+  font-size: 1.4em;
+}
+#my-info div p > span {
+  font-weight: bold;
+  color: #aaa;
+}
+
+#sign-up {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  min-width: 320px;
+  max-width: 640px; 
+  color: #fff;
+  padding-top: 14px;
+  text-align: center;
+  border: 0px solid yellow;
+}
+
+#fav-list {
+  margin-top: 10px;
+}
+
+#fav-list p {
+  padding: 0;
+  margin: 0;
+}
+#fav-list .invalid {
+  color: red;
+}
+#fav-list .valid {
+  color: green;
+}
+
+#sign-up input {
+  color: #000;
+  width: 80%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;  
+  margin-top: 7px;
+}
+
+#sign-up button {
+  color: #000;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;  
+  margin-top: 14px;
+}
+
+#sign-up span { 
+  color: red;
+  font-size: 0.8em;
+  margin-top: 7px;
+}
+
 .container .jumbotron {
   box-shadow: 0 0 50px #3F0C1F;
   border: 2px solid #3F0C1F;

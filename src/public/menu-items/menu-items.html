@@ -6,7 +6,7 @@
     {{ menuItemsCtrl.menuItems.category.special_instructions}}
   </div>
 
-  <menu-item ng-repeat="menuItem in menuItemsCtrl.menuItems.menu_items"
+  <menu-item ng-repeat="menuItem in menuItemsCtrl.menuItems.menu_items | orderBy:'id'"
              menu-item="menuItem">
   </menu-item>
 
