@@ -1,27 +1,24 @@
 <div class="container">
 	<h2 id="menu-categories-title" class="text-center">My Info</h2>
 
-	<div id="my-info">
-
-		<div ng-if="!info.user.firstname">
-			<p>Not Signed Up Yet.</p>
-			<a ui-sref="public.signup">Sign up Now!</a>  		
-		</div>
-
-		<div ng-if="info.user.firstname">
-			<p><span>First Name:</span> {{info.user.firstname}}</p>
-			<p><span>Last Name:</span> {{info.user.lastname}}</p>
-			<p><span>Email:</span> {{info.user.email}}</p>
-			<p ng-if="info.user.phone"><span>Phone:</span> {{info.user.phone}}</p>
-			<p><span>Your Favorite List:</span></p>
-		</div>
-
-
-			<menu-item ng-repeat="menuItem in info.user.favItems | orderBy:'id'"
-				menu-item="menuItem">
-			</menu-item> 
-
-
+	<div ng-if="!info.user.firstname" class="user-info">
+		<p>Not Signed Up Yet.</p>
+		<a ui-sref="public.signup">Sign up Now!</a>  		
 	</div>
+
+	<div ng-if="info.user.firstname" class="user-info">
+		<p><span>First Name:</span> {{info.user.firstname}}</p>
+		<p><span>Last Name:</span> {{info.user.lastname}}</p>
+		<p><span>Email:</span> {{info.user.email}}</p>
+		<p ng-if="info.user.phone"><span>Phone:</span> {{info.user.phone}}</p>
+		<p><span>Your Favorite List:</span></p>
+	</div>
+
+	<menu-item ng-repeat="menuItem in info.user.favItems | orderBy:'id'"
+		menu-item="menuItem">
+	</menu-item> 
+
+
+
  
 </div>

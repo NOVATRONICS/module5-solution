@@ -12,17 +12,15 @@
   margin-top: 20px;
 }
 
-#my-info div > p {
+.user-info {
   text-align: center;
 }
-#my-info div > a {
-  text-align: center;
-  text-decoration: none;
-  font-size: 1.4em;
-}
-#my-info div p > span {
-  font-weight: bold;
+.user-info p span {
   color: #aaa;
+}
+.user-info a {
+  color: red;
+  font-size: 1.4em;
 }
 
 #sign-up {

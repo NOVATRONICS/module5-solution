@@ -12,6 +12,7 @@ function RegistrationController(menuItems, UserService, MenuService, $q, $state,
   reg.user = {};
   reg.user.favItems = [];
 
+/*
   function checkValidItem(short_name) {
     var item = {short_name: short_name, valid: false};
     reg.menuItems.forEach(function(i) {
@@ -23,8 +24,7 @@ function RegistrationController(menuItems, UserService, MenuService, $q, $state,
     });
     return item;
   }
-
-/*
+  
   reg.submit = function () {
     reg.completed = true;
     UserService.saveUser(reg.user);
